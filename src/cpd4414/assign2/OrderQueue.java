@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright 2015 Len Payne <len.payne@lambtoncollege.ca>.
  * Updated 2015 Mark Russell <mark.russell@lambtoncollege.ca>.
  *
