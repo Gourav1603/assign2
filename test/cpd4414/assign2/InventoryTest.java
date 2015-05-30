@@ -40,8 +40,9 @@ public class InventoryTest {
     @Test
     public void testGetQuantityForIdReturnsValidResultForPositiveID() {
         int id = 4;
-        int result = Inventory.getQuantityForId(id);
+        int  result = Inventory.getQuantityForId(id);
         assertTrue(result >= 0);        
     }
     
 }
+  
