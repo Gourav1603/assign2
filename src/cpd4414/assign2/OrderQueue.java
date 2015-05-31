@@ -18,8 +18,11 @@
 package cpd4414.assign2;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Queue;
+
 
 /**
  *
@@ -27,6 +30,7 @@ import java.util.Queue;
  */
 public class OrderQueue {
     Queue<Order> orderQueue = new ArrayDeque<>();
+    List<Order> Orderlist =new ArrayList<>();
     
     public void add(Order order) throws NoCustomerException, NoPurchasesException {
         if(order.getCustomerId().isEmpty() && order.getCustomerName().isEmpty()){
@@ -41,6 +45,24 @@ public class OrderQueue {
     public Order next(){
         return orderQueue.peek();
     }
+
+    void process(Order next) throws NoTimeReceivedException {
+        
+        if (next.equals(next())) {
+      //      boolean isOkay =true;
+        //    for(Purchase p: next.getListOfPurchases()){
+          //      if(Inventory.getQuantityForId(p.getProductId()) < p.getQuantity())
+            //        isOkay= false;
+            //}
+            //if(isOkay){
+            orderList.add(orderQueue.remove());
+            next.setTimeProcessed(new Date());
+    //}
+    }
+        else if(next.getTimeReceived()== null){
+            throw new NoTimeReceivedException();
+        }
+    }  
     
         public class NoCustomerException extends Exception {
             public NoCustomerException()  {
@@ -52,4 +74,9 @@ public class OrderQueue {
                 super("no purchases Pcovided");
             }
 }
+        public class NoTimeReceivedException extends Exception{
+            public NoTimeReceivedException(){
+            super("No Time Received on this Order");
+        }
+        }
 }
